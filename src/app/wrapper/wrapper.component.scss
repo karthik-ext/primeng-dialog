@@ -1,0 +1,44 @@
+.divider {
+  @apply border w-[560px] h-[1px]; /* Base Tailwind border utility */
+  border-color: var(--white_shade2, #e9e9e9); /* Use the variable or fallback */
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px !important;
+  font-weight: 400;
+}
+
+
+:host ::ng-deep .p-checkbox-icon .p-icon {
+  @apply outline-none shadow-none;
+}
+::ng-deep .p-checkbox-box {
+    @apply shadow-none outline-none;
+  }
+  
+  ::ng-deep .p-checkbox-box:focus {
+    @apply shadow-none outline-none;
+  }
+  
+  ::ng-deep .p-checkbox.p-focus {
+    @apply shadow-none outline-none;
+  }
+  
+  ::ng-deep .p-checkbox-box:hover,
+  ::ng-deep .p-checkbox-box:active {
+    @apply shadow-none outline-none;
+  }
+  
+  ::ng-deep .p-checkbox {
+    @apply outline-none;
+  }
+  
+  ::ng-deep .p-checkbox-box.p-highlight {
+    @apply bg-black border-black;
+  }
+  
+  ::ng-deep .p-checkbox-box.p-highlight .p-checkbox-icon {
+    @apply text-white;
+  }
+  

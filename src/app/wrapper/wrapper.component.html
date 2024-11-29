@@ -1,0 +1,57 @@
+<div class="min-h-screen flex justify-center items-center">
+  <button
+    (click)="showDialog()"
+    class="bg-yellow-400 w-[100px] h-[32px] rounded-sm"
+  >
+    Popup
+  </button>
+</div>
+
+<p-dialog
+  header="Quick Actions"
+  [(visible)]="visible"
+  [style]="{ width: '560px',}"
+  [modal]="true"
+  [closable]="true"
+>
+  <div class="flex gap-4">
+    <!-- Left Section -->
+    <div class="flex-1 border-r border-[#E9E9E9] pr-4">
+      <p class="text-[12px] text-[#BDBDBD] mb-2 w-[240px]">
+        Select any 10 options to view in Quick Menu
+      </p>
+      <ul>
+        <li *ngFor="let option of dialogList" class="flex items-center m-3">
+          <p-checkbox
+            [binary]="true"
+            (onChange)="handleOptionChange(option)"
+            class="mr-2"
+          ></p-checkbox>
+          <label class="text-[#666666] text-[14px]">{{ option }}</label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex-1">
+      <div class="flex justify-between items-center mb-2">
+        <p class="text-black font-semibold text-[12px]">
+          Selected Options
+          <span
+            class="text-black w-[12px] font-bold bg-[#F4F4F4] rounded-tl-md rounded-br-none rounded-bl-none rounded-tr-none ml-3"
+            >{{ selectedDialogList.length }}</span
+          >
+        </p>
+      </div>
+      <ul>
+        <li
+          *ngFor="let option of selectedDialogList"
+          class="flex items-center p-2 mb-2 bg-[#F4F4F4] border border-[#E9E9E9] rounded"
+        >
+          <span class="mr-2 cursor-move text-[#666666]">⋮⋮</span>
+          <p class="text-[14px] text-[#666666]">{{ option }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</p-dialog>
