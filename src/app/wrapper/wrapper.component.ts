@@ -1,5 +1,6 @@
 import { dialogStatic } from './wrapper-static';
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-wrapper',
@@ -17,12 +18,18 @@ export class WrapperComponent implements OnInit {
     this.visible = true;
   }
 
+
+  reorderList(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.selectedDialogList, event.previousIndex, event.currentIndex);
+  }
+
   handleOptionChange(ele: any) {
     if (ele === null || ele === undefined) return;
     const index = this.selectedDialogList.indexOf(ele);
 
-    index > -1?this.selectedDialogList.splice(index, 1):this.selectedDialogList.push(ele)
+    index > -1
+      ? this.selectedDialogList.splice(index, 1)
+      : this.selectedDialogList.push(ele);
   }
 
-  
 }

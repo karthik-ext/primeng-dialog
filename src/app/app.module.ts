@@ -6,20 +6,21 @@ import { AppComponent } from './app.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from 'primeng/dragdrop';
+import { PickListModule } from 'primeng/picklist';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WrapperComponent
-  ],
+  declarations: [AppComponent, WrapperComponent],
   imports: [
     BrowserModule,
     DialogModule,
+    DragDropModule,
+    PickListModule,
     CheckboxModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -6,11 +6,10 @@
     Popup
   </button>
 </div>
-
 <p-dialog
   header="Quick Actions"
   [(visible)]="visible"
-  [style]="{ width: '560px',}"
+  [style]="{ width: '560px' }"
   [modal]="true"
   [closable]="true"
 >
@@ -22,12 +21,15 @@
       </p>
       <ul>
         <li *ngFor="let option of dialogList" class="flex items-center m-3">
-          <p-checkbox
-            [binary]="true"
-            (onChange)="handleOptionChange(option)"
-            class="mr-2"
-          ></p-checkbox>
-          <label class="text-[#666666] text-[14px]">{{ option }}</label>
+          <label class="text-[#666666] text-[14px]">
+            <p-checkbox
+              [binary]="true"
+              (onChange)="handleOptionChange(option)"
+              class="mr-4"
+            >
+            </p-checkbox
+            >{{ option }}</label
+          >
         </li>
       </ul>
     </div>
@@ -39,19 +41,26 @@
           Selected Options
           <span
             class="text-black w-[12px] font-bold bg-[#F4F4F4] rounded-tl-md rounded-br-none rounded-bl-none rounded-tr-none ml-3"
-            >{{ selectedDialogList.length }}</span
           >
+            {{ selectedDialogList.length }}
+          </span>
         </p>
       </div>
-      <ul>
-        <li
+      <div
+        cdkDropList
+        [cdkDropListData]="selectedDialogList"
+        class="space-y-2"
+        (cdkDropListDropped)="reorderList($event)"
+      >
+        <div
           *ngFor="let option of selectedDialogList"
-          class="flex items-center p-2 mb-2 bg-[#F4F4F4] border border-[#E9E9E9] rounded"
+          cdkDrag
+          class="cursor-move flex items-center p-2 bg-[#F4F4F4] border border-[#E9E9E9] rounded"
         >
-          <span class="mr-2 cursor-move text-[#666666]">⋮⋮</span>
+          <span class="mr-2 text-[#666666]">⋮⋮</span>
           <p class="text-[14px] text-[#666666]">{{ option }}</p>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </p-dialog>
