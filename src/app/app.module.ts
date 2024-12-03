@@ -8,6 +8,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from 'primeng/dragdrop';
 import { PickListModule } from 'primeng/picklist';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [AppComponent, WrapperComponent],
@@ -20,7 +21,9 @@ import { PickListModule } from 'primeng/picklist';
     BrowserAnimationsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

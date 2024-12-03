@@ -20,6 +20,7 @@ export class WrapperComponent implements OnInit {
 
 
   reorderList(event: CdkDragDrop<string[]>) {
+    console.log(this.selectedDialogList)
     moveItemInArray(this.selectedDialogList, event.previousIndex, event.currentIndex);
   }
 
