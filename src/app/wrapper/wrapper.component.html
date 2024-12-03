@@ -7,12 +7,17 @@
   </button>
 </div>
 <p-dialog
-  header="Quick Actions"
   [(visible)]="visible"
   [style]="{ width: '560px' }"
   [modal]="true"
   [closable]="true"
 >
+  <ng-template pTemplate="header">
+    <div class="m-0">
+      <h3 class="font-semibold">Quick Actions</h3>
+    </div>
+  </ng-template>
+  <div class="w-[560px] -ml-[30px] border-t border-gray-300 mb-4"></div>
   <div class="flex gap-4">
     <!-- Left Section -->
     <div class="flex-1 border-r border-[#E9E9E9] pr-4">

@@ -9,36 +9,38 @@ body {
   font-weight: 400;
 }
 
-
 :host ::ng-deep .p-checkbox-icon .p-icon {
   @apply outline-none shadow-none;
 }
 ::ng-deep .p-checkbox-box {
-    @apply shadow-none outline-none;
-  }
-  
-  ::ng-deep .p-checkbox-box:focus {
-    @apply shadow-none outline-none;
-  }
-  
-  ::ng-deep .p-checkbox.p-focus {
-    @apply shadow-none outline-none;
-  }
-  
-  ::ng-deep .p-checkbox-box:hover,
-  ::ng-deep .p-checkbox-box:active {
-    @apply shadow-none outline-none;
-  }
-  
-  ::ng-deep .p-checkbox {
-    @apply outline-none;
-  }
-  
-  ::ng-deep .p-checkbox-box.p-highlight {
-    @apply bg-black border-black;
-  }
-  
-  ::ng-deep .p-checkbox-box.p-highlight .p-checkbox-icon {
-    @apply text-white;
-  }
-  
+  @apply shadow-none outline-none;
+}
+
+::ng-deep .p-checkbox-box:focus {
+  @apply shadow-none outline-none;
+}
+
+::ng-deep .p-checkbox.p-focus {
+  @apply shadow-none outline-none;
+}
+
+::ng-deep .p-checkbox-box:hover,
+::ng-deep .p-checkbox-box:active {
+  @apply shadow-none outline-none;
+}
+
+::ng-deep .p-checkbox {
+  @apply outline-none;
+}
+
+::ng-deep .p-checkbox-box.p-highlight {
+  @apply bg-black border-black;
+}
+
+::ng-deep .p-checkbox-box.p-highlight .p-checkbox-icon {
+  @apply text-white;
+}
+
+::ng-deep .p-dialog-content {
+  @apply overflow-x-hidden;
+}
