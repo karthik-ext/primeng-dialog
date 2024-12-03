@@ -8,22 +8,20 @@
 </div>
 <p-dialog
   [(visible)]="visible"
-  [style]="{ width: '560px' }"
-  [modal]="true"
+  [style]="{ width: '560px', height:'522px' }"
+  modal="true"
   [closable]="true"
 >
-  <ng-template pTemplate="header">
-    <div class="m-0">
-      <h3 class="font-semibold">Quick Actions</h3>
-    </div>
+  <ng-template pTemplate="header" class="m-0">
+    <span class="text-[16px] font-semibold">Quick Actions</span>
   </ng-template>
-  <div class="w-[560px] -ml-[30px] border-t border-gray-300 mb-4"></div>
+  <div class="w-[560px] -ml-[30px] border-t border-gray-300"></div>
   <div class="flex gap-4">
     <!-- Left Section -->
-    <div class="flex-1 border-r border-[#E9E9E9] pr-4">
-      <p class="text-[12px] text-[#BDBDBD] mb-2 w-[240px]">
+    <div class="border-r border-[#E9E9E9] pr-4">
+      <span class="text-[12px] text-[#BDBDBD] w-[260px]">
         Select any 10 options to view in Quick Menu
-      </p>
+      </span>
       <ul>
         <li *ngFor="let option of dialogList" class="flex items-center m-3">
           <label class="text-[#666666] text-[14px]">
@@ -41,15 +39,15 @@
 
     <!-- Right Section -->
     <div class="flex-1">
-      <div class="flex justify-between items-center mb-2">
-        <p class="text-black font-semibold text-[12px]">
+      <div class="flex justify-between items-center">
+        <span class="text-black font-semibold text-[12px] mt-[2px]">
           Selected Options
           <span
-            class="text-black w-[12px] font-bold bg-[#F4F4F4] rounded-tl-md rounded-br-none rounded-bl-none rounded-tr-none ml-3"
+            class="text-black w-[15px] font-bold bg-[#F4F4F4] rounded-tl-none p-[3px] rounded-br-none rounded-bl-none rounded-tr-none ml-1"
           >
             {{ selectedDialogList.length }}
           </span>
-        </p>
+        </span>
       </div>
       <div
         cdkDropList
@@ -60,7 +58,7 @@
         <div
           *ngFor="let option of selectedDialogList"
           cdkDrag
-          class="cursor-move flex items-center p-2 bg-[#F4F4F4] border border-[#E9E9E9] rounded"
+          class="cursor-move flex items-center p-2 bg-[#F4F4F4] border-[#E9E9E9] rounded"
         >
           <span class="mr-3 text-[#666666]">⋮⋮</span>
           <span class="text-[14px] text-[#666666]">{{ option }}</span>

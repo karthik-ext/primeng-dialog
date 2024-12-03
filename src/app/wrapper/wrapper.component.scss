@@ -44,3 +44,12 @@ body {
 ::ng-deep .p-dialog-content {
   @apply overflow-x-hidden;
 }
+
+::ng-deep .p-checkbox-box {
+  @apply w-[18px] h-[18px] border border-[#D9D9D9] bg-white;
+  border-radius: 4px;
+}
+
+::ng-deep .p-dialog-header{
+  @apply m-0 h-0
+}
